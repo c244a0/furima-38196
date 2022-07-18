@@ -47,15 +47,15 @@
 
 ##　consumer
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| postcode           | string     | null: false                    |
-| prefecture_id      | integer    | null: false                    |
-| city               | string     | null: false                    |
-| block              | string     | null: false                    |
-| buildings          | string     |                                |
-| phone_number       | string     | null: false                    |
-| order              | string     | null: false, foreign_key: true |
+| Column             | Type          | Options                        |
+| ------------------ | ------------- | ------------------------------ |
+| postcode           | string        | null: false                    |
+| prefecture_id      | integer       | null: false                    |
+| city               | string        | null: false                    |
+| block              | string        | null: false                    |
+| buildings          | string        |                                |
+| phone_number       | string        | null: false                    |
+| order              | references    | null: false, foreign_key: true |
 
 ## assocation
 
