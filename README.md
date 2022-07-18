@@ -33,7 +33,7 @@
 - belongs_to :user
 - has_one    :order
 
-## order
+## orders
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
@@ -53,7 +53,7 @@
 | prefecture_id      | integer       | null: false                    |
 | city               | string        | null: false                    |
 | block              | string        | null: false                    |
-| buildings          | string        |                                |
+| building           | string        |                                |
 | phone_number       | string        | null: false                    |
 | order              | references    | null: false, foreign_key: true |
 
