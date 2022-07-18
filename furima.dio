@@ -7,7 +7,7 @@
                 <mxCell id="6" value="user" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-198" y="211" width="310" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="nickname(string型,　NOT NULL）&#10;emaill(string型, NOT NULL, ユニーク制約)&#10;encrypted_password(string 型, NOTNULL)&#10;last-name(string型, NOTNULL,full-width,)&#10;first-name(string型, NOTNULL,kana,katakana)&#10;birthday(date型, NOTNULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="6" vertex="1">
+                <mxCell id="7" value="nickname(string型,　NOT NULL）&#10;emaill(string型, NOT NULL, ユニーク制約,)&#10;encrypted_password(string 型, NOTNULL)&#10;last_name(string型, NOTNULL,full-width,)&#10;first_name(string型, NOTNULL,)&#10;last_name_kana(string型, NOTNULL,)&#10;first_name_kana(string型, NOTNULL,)&#10;birthday(date型, NOTNULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="6" vertex="1">
                     <mxGeometry y="30" width="310" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
