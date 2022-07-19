@@ -39,7 +39,6 @@ RSpec.describe User, type: :model do
       it "passwordが全角英数字だと登録できない" do
         @user.password ='２８６７５３a'
         @user.valid?
-        binding.pry
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
 
