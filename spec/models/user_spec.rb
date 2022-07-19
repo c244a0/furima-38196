@@ -45,7 +45,6 @@ RSpec.describe User, type: :model do
       it "passwordが英語のみだと登録できない" do
         @user.password = 'aaaaaaaa'
         @user.valid?
-        binding.pry
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
 
