@@ -102,12 +102,12 @@ RSpec.describe Item, type: :model do
       it 'priceが300円未満だと出品できない' do
         @item.price = 200
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be greater than 300')
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceが10000000以上だと出品できない' do
         @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be less than 9999999')
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
