@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit]
+  before_action :authenticate_user!, only: [:edit, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :user_signed_chack, only: [:edit, :destroy]
 
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if user_signed_in? && user_signed_chack
+    if user_signed_chack
       @item.destroy
       redirect_to root_path
     else
