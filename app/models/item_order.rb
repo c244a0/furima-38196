@@ -1,6 +1,6 @@
 class ItemOrder
   include ActiveModel::Model
-  attr_accessor :token, :postcode, :prefecture_id, :city, :block, :building, :phone_number, :order_id, :user_id, :item_id
+  attr_accessor :token, :postcode, :prefecture_id, :city, :block, :building, :phone_number, :user_id, :item_id, :order_id
 
   with_options presence: true do
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
@@ -10,13 +10,12 @@ class ItemOrder
     validates :block
     validates :user_id
     validates :item_id
-    validates :order_id
     validates :token
   end
 
   def save
+    order = Order.create(user_id: user_id, item_id: item_id)
     Consumer.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building,
-                    phone_number: phone_number, order_id: order.id)
-    Order.create(user_id: user_id, item_id: item_id)
+      phone_number: phone_number, order_id: order.id)
   end
 end
