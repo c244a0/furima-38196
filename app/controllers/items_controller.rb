@@ -57,6 +57,6 @@ class ItemsController < ApplicationController
   end
 
   def user_signed_chack
-    current_user.id == @item.user_id
+    current_user.id == @item.user_id && @item_order =nil
   end
 end
