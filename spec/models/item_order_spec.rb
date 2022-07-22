@@ -16,7 +16,7 @@ RSpec.describe ItemOrder, type: :model do
     end
 
     context '異常系' do
-      it  'postcodeが空だと登録できない' do
+      it 'postcodeが空だと登録できない' do
         @order.postcode = ''
         @order.valid?
         expect(@order.errors.full_messages).to include("Postcode can't be blank")
@@ -24,12 +24,12 @@ RSpec.describe ItemOrder, type: :model do
       it 'postcodeハイフンなしだと登録できない' do
         @order.postcode = '12345678'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid. Include hyphen(-)")
+        expect(@order.errors.full_messages).to include('Postcode is invalid. Include hyphen(-)')
       end
       it 'postcodeのハイフンの位置がずれると登録できない' do
         @order.postcode = '12-12345'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Postcode is invalid. Include hyphen(-)")
+        expect(@order.errors.full_messages).to include('Postcode is invalid. Include hyphen(-)')
       end
       it 'prefecture_idが空だと登録できない' do
         @order.prefecture_id = ''
@@ -51,7 +51,7 @@ RSpec.describe ItemOrder, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include("Block can't be blank")
       end
-      it 'phone_numberが空だと登録できない'do
+      it 'phone_numberが空だと登録できない' do
         @order.phone_number = ''
         @order.valid?
         expect(@order.errors.full_messages).to include("Phone number can't be blank")
@@ -63,12 +63,12 @@ RSpec.describe ItemOrder, type: :model do
       it 'phone_numberが12文字以上だと登録できない' do
         @order.phone_number = '000000000000'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Phone number is invalid")
+        expect(@order.errors.full_messages).to include('Phone number is invalid')
       end
       it 'phone_numberがハイフンありだと登録ができない' do
         @order.phone_number = '000-0000-000'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Phone number is invalid")
+        expect(@order.errors.full_messages).to include('Phone number is invalid')
       end
       it 'user_idが空だと登録できない' do
         @order.user_id = nil

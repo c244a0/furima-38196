@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless user_signed_chack
+    redirect_to root_path if user_signed_chack
   end
 
   def update
@@ -57,6 +57,6 @@ class ItemsController < ApplicationController
   end
 
   def user_signed_chack
-    current_user.id == @item.user_id && @item_order =nil
+    current_user.id != @item.user_id && @item_order = nil
   end
 end
