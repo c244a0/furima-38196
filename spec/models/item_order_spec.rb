@@ -83,6 +83,7 @@ RSpec.describe ItemOrder, type: :model do
       it 'order_idが空だと登録できない' do
         @order.order_id = nil
         @order.valid?
+
         expect(@order.errors.full_messages).to include("Order can't be blank")
       end
       it 'tokenが空では登録できないこと' do
