@@ -10,7 +10,6 @@ class ItemOrder
     validates :block
     validates :user_id
     validates :item_id
-    validates :order_id
     validates :token
   end
 

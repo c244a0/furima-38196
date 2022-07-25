@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path if user_signed_chack
+    
   end
 
   def update
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if user_signed_chack
+    if 
       @item.destroy
       redirect_to root_path
     else
@@ -57,6 +57,8 @@ class ItemsController < ApplicationController
   end
 
   def user_signed_chack
-    current_user.id != @item.user_id && @item_order = nil
+    if current_user.id == @item.user_id && @item_order = nil
+      redirect_to root_path 
+    end
   end
 end
