@@ -8,8 +8,6 @@ class ItemOrder
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
     validates :city
     validates :block
-    validates :user_id
-    validates :item_id
     validates :token
   end
 
